@@ -1,0 +1,6 @@
+[package]
+name = "fastn_05_compiler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
