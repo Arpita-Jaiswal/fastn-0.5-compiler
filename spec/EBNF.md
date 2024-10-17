@@ -5,15 +5,16 @@
 <item> ::= <module_comment> | <comment>
 
 
-<module_comment> ::= <single_module_comment>+
-<single_module_comment> ::= ";;;" <opt_whitespace> <statement>? <opt_whitespace> <new_line>
+<module_comment> ::= (<single_module_comment> <new_line>)* <single_module_comment> (<new_line> | <eof>)
+<single_module_comment> ::= ";;;" <opt_whitespace> <statement>? <opt_whitespace> 
 
-<comment> ::= <single_comment>+
+<comment> ::= (<single_comment> <new_line>)* <single_comment> (<new_line> | <eof>)
 <single_comment> ::= ";;" <opt_whitespace> <statement>? <opt_whitespace> <new_line>
 
 
 
 <new_line> ::= "\n"
+<eof> ::= "\n"
 <statement> ::= <text> <opt_whitespace> | <text>
 <opt_whitespace> ::= " "*
 <text> ::= <character> <text> | <character>
